@@ -1,0 +1,1117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Naman Doshi - Full-stack Developer</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/n.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+  <style>
+    /* Skill Box Styles */
+    .skill-box {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hover Effect */
+    .skill-box:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #e3f2fd, #3D03B6);
+      color: #fff;
+    }
+
+    /* Title Adjustments */
+    .skill-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #0F2943;
+    }
+
+    /* Paragraph Adjustments */
+    .skill-box p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    /* On Hover, Change Text Color */
+    .skill-box:hover h3,
+    .skill-box:hover p {
+      color: #fff;
+    }
+
+    /* Scroll Animation */
+    [data-aos] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    [data-aos].aos-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stat-item {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #3D03B6;
+      margin-bottom: 15px;
+    }
+
+    .stat-number {
+      font-size: 40px;
+      font-weight: 700;
+      color: #3D03B6;
+    }
+        /* Set a fixed width and height for lightbox images */
+    .glightbox-container .gslide-image img {
+        max-width: 80vw; /* 80% of viewport width */
+        max-height: 80vh; /* 80% of viewport height */
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    /* Ensure 3x3 Grid Layout */
+.isotope-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Spacing between items */
+}
+
+/* Set equal height for portfolio cards */
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    height: 500px; /* Fixed height */
+    width: 100%; /* Make it responsive */
+    overflow: hidden;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+.description-content {
+  max-height: 100px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.description-content.expanded {
+  max-height: 300px; /* or any value that fits within your card height */
+  overflow-y: auto;  /* enables scroll if content is longer */
+  padding-right: 10px; /* space for scrollbar */
+}
+
+/* Optional: Style the scrollbar (WebKit browsers) */
+.description-content.expanded::-webkit-scrollbar {
+  width: 6px;
+}
+
+.description-content.expanded::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+
+  .read-more {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    cursor: pointer;
+  }
+
+/* Responsive for smaller screens */
+@media (max-width: 992px) {
+    .isotope-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .isotope-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+    }
+}
+@media (max-width: 576px) {
+  .info-item .value {
+    font-size: 13px;
+  }
+}
+
+
+  </style>
+
+</head>
+
+<body class="index-page">
+
+<!-- Header -->
+<header id="header" class="header d-flex align-items-center sticky-top">
+  <div
+    class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+    <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+      <h1 class="sitename" style="color: #3d03b8;"><b>Naman</b></h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu d-flex align-items-center">
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skill</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+    <!-- This div will always stay to the right -->
+    <div class="d-none d-xl-block">
+      <a href="#contact" class="btn btn-primary" style="background: #3d03b8; border-radius: 22px;">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-center content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h2>Your Vision, Our Expertise</h2>
+            <h3>From Concept to Reality</h3>
+            <p class="lead">
+              We offer end-to-end development services including web, mobile apps, backend, API integration, cloud deployment, AI/ML solutions, and IoT-based applications.
+            </p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+              <a href="{% url 'download_cv' resume_id=1 %}" class="btn btn-primary" download>Download CV</a>
+
+
+              <a href="#portfolio" class="btn btn-outline">Projects</a>
+            </div>
+            <div class="hero-stats" >
+              <div class="stat-item">
+                <span class="stat-number" data-count="2">0</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="5">0</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="5">0</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-image">
+              <img src="{% static 'img/profile-transparent.webp' %}" alt="Portfolio Hero Image" class="img-fluid"
+                data-aos="zoom-out" data-aos-delay="300">
+              <div class="shape-1"></div>
+              <div class="shape-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section light-background">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <div class="title-shape">
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor"
+              stroke-width="2"></path>
+          </svg>
+        </div>
+          <p>I build the digital bridges of tomorrow — crafting cutting-edge web apps, mobile solutions, and intelligent APIs that power the future of technology.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-center">
+          <div class="col-lg-6 position-relative" data-aos="fade-right" data-aos-delay="200">
+            <div class="about-image">
+              <img src="{% static 'img/naman.jpeg' %}" alt="Profile Image" class="img-fluid rounded-4">
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="about-content">
+              <span class="subtitle">About Me</span>
+
+              <h2>Full Stack Developer</h2>
+
+              <p class="lead mb-4">I transform ideas into reality using Python, crafting dynamic web applications, mobile solutions, seamless API integrations, and innovative AI/ML solutions that drive the future of technology.</p>
+
+
+              <p class="mb-4">Delivering end-to-end full-stack Python solutions that power the modern web with efficiency and innovation.</p>
+
+
+              <div class="personal-info">
+                <div class="row g-4">
+                  <div class="col-6">
+                    <div class="info-item">
+                      <span class="label">Name</span>
+                      <span class="value">Naman Doshi</span>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="info-item">
+                      <span class="label">Phone</span>
+                      <span class="value">+91 9624185617</span>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="info-item">
+                      <span class="label">Age</span>
+                      <span class="value">23 Years</span>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="info-item">
+                      <span class="label">Email</span>
+                      <span class="value">namandoshi459@gmail.com</span>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="info-item">
+                      <span class="label">Occupation</span>
+                      <span class="value">Python developer</span>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="info-item">
+                      <span class="label">Nationality</span>
+                      <span class="value">India</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="signature mt-4">
+                <div class="signature-image">
+                  <!-- <img src="{% static 'img/sign.png' %}" alt="" class="img-fluid"> -->
+                </div>
+                <div class="signature-info">
+                  <h4>Naman Doshi</h4>
+                  <p>Python-Powered Solutions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills & Expertise</h2>
+        <div class="title-shape">
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor"
+              stroke-width="2"></path>
+          </svg>
+        </div>
+        <p>Mastering a diverse tech stack to build scalable, efficient, and innovative digital solutions.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4 skills-animation">
+
+          <!-- Backend Development -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-box">
+              <h3>Backend Development</h3>
+              <p>Expert in <b>Python</b>, <b>Django</b>, <b>Django Rest Framework</b>, and <b>API's</b> development.</p>
+            </div>
+          </div>
+
+          <!-- Frontend Development -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-box">
+              <h3>Frontend Development</h3>
+              <p>Skilled in <b>HTML, CSS, Bootstrap</b>, and responsive UI design.</p>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-box">
+              <h3>Databases</h3>
+              <p>Proficient in <b>PostgreSQL, MySQL, SQLite, MongoDB</b> for data management.</p>
+            </div>
+          </div>
+
+          <!-- AI & Machine Learning -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+            <div class="skill-box">
+              <h3>AI & Machine Learning</h3>
+              <p>Developing AI-driven solutions using <b>ML algorithms, OpenCV, TensorFlow</b>.</p>
+            </div>
+          </div>
+
+          <!-- Cloud & Server Management -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="skill-box">
+              <h3>Cloud & Hosting</h3>
+              <p>Experience with <b>AWS, DigitalOcean, PythonAnywhere</b> for cloud deployment.</p>
+            </div>
+          </div>
+
+          <!-- Server & Deployment -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="skill-box">
+              <h3>Server & Deployment</h3>
+              <p>Handling <b>Nginx, Gunicorn</b> for secure & optimized hosting.</p>
+            </div>
+          </div>
+
+
+          <!-- Digital Marketing & Analytics -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="700">
+            <div class="skill-box">
+              <h3>Marketing & Analytics</h3>
+              <p>Expert in <b>Facebook Ads Manager, Google Analytics</b> for data-driven insights.</p>
+            </div>
+          </div>
+
+          <!-- Version Control & Collaboration -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="800">
+            <div class="skill-box">
+              <h3>Version Control</h3>
+              <p>Proficient in <b>Git & GitHub</b> for seamless code collaboration.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Skills Section -->
+
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <div class="title-shape">
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor"
+              stroke-width="2"></path>
+          </svg>
+        </div>
+        <p>Skilled Python and Django developer with expertise in AI/ML, backend development, and cloud computing.
+          Passionate about building scalable and innovative solutions.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-12">
+            <div class="resume-wrapper">
+
+              <div class="resume-block" data-aos="fade-up">
+                <h2>Work Experience</h2>
+                <p class="lead">Experienced in full-stack development, API integrations, and AI-driven solutions.
+                  Focused on optimizing performance and enhancing user experience.</p>
+
+                <div class="timeline">
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-left">
+                      <h4 class="company">Webapprise system</h4>
+                      <span class="period">Jun, 2024 - Current</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">jr. python developer</h3>
+                      <p class="description">Successfully developed and deployed a full-stack web application using
+                        Django, featuring dynamic user interfaces and seamless
+                        integration of RESTful APIs. Enhanced application functionality by creating custom APIs and
+                        optimizing backend performance, resulting in
+                        a 35% reduction in response times. Implemented AI-driven image processing capabilities to
+                        automatically tag and categorize images,
+                        significantly improving user experience and operational efficiency. Leveraged tools like Meta
+                        for Developers, Facebook Ads Manager,
+                        Google Analytics, and AWS for advanced analytics, advertising optimization, and cloud
+                        infrastructure management. Achieved a high level
+                        of system reliability and security, earning commendation for delivering robust, scalable
+                        solutions that met all project objectives and client
+                        needs.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-left">
+                      <h4 class="company">Saubhagyam Web Pvt. Ltd.</h4>
+                      <span class="period">Jan,2024 - Jun,2024</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Python Backend Intern</h3>
+                      <p class="description">
+                        In my role as a Python Backend Intern, I honed my skills in Python, specifically Django and
+                        Django REST frameworks. I also focused on
+                        backend development tasks, leveraging PostgreSQL and SQLite for database management. </p>
+                      <ul>
+                        <li>During my internship, I actively contributed to backend module development, ensuring
+                          seamless integration into projects.</li>
+                        <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the
+                          project. </li>
+                        <li>I
+                          expanded my expertise by acquiring proficiency in HTML and CSS for frontend collaboration,
+                          enriching my ability to contribute to
+                          comprehensive project development.</li>
+                        <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                      </ul>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-left">
+                      <h4 class="company">Stepping Stone Ltd.</h4>
+                      <span class="period">2015-2019</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Graphic design specialist</h3>
+                      <p class="description">Curabitur ullamcorper ultricies nisi nam eget dui etiam rhoncus maecenas
+                        tempus.</p>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="resume-block" data-aos="fade-up" data-aos-delay="100">
+                <h2>My Education</h2>
+                <p class="lead">A journey of continuous learning, innovation, and technical excellence. My academic
+                  background has equipped me with a strong foundation in computer science, software development, and
+                  emerging technologies.</p>
+
+                <div class="timeline">
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-left">
+                      <h4 class="company">GLS University</h4>
+                      <span class="period">2022-2024</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Master of Computer Application</h3>
+                      <p class="description">Specialized in <b>software development, AI/ML, and cloud computing</b>.
+                        Developed real-world projects, including AI-powered applications and full-stack web solutions.
+                        Strengthened my expertise in <b>Python, Django, and cloud technologies</b>.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-left">
+                      <h4 class="company">Gujarat University</h4>
+                      <span class="period">2019 - 2022</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Bachelor of Computer Application</h3>
+                      <p class="description">Laid a strong foundation in <b>programming, databases, and web
+                          development</b>. Developed various academic projects, gaining hands-on experience in
+                        <b>Python, SQL, and front-end technologies</b>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-left">
+                      <h4 class="company">Vestibulum University</h4>
+                      <span class="period">2015-2019</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Bachelor of Fine Arts &amp; Graphic Design</h3>
+                      <p class="description">Curabitur ullamcorper ultricies nisi nam eget dui etiam rhoncus maecenas
+                        tempus.</p>
+                    </div>
+                  </div> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Portfolio</h2>
+    <div class="title-shape">
+      <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+      </svg>
+    </div>
+    <p>My recent projects in Web Apps, Mobile Apps, and AI/ML.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+      <!-- Portfolio Filters -->
+      <!-- Portfolio Filters (Dynamic) -->
+<div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
+  <ul class="portfolio-filters isotope-filters">
+    <li data-filter="*" class="filter-active">All</li>
+    {% for category in categories %}
+      <li data-filter=".filter-{{ category.name|lower|slugify }}">{{ category.name }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+      <!-- <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+        {% for project in projects %}
+        <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-{{ project.category }}">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="{{ project.thumbnail.url }}" class="img-fluid" alt="{{ project.title }}" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-actions">
+                  <a href="{{ project.preview_image.url }}" class="glightbox preview-link" data-gallery="portfolio-gallery-{{ project.category }}">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  <a href="{{ project.details_link }}" class="details-link">
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="category">{{ project.get_category_display }}</span>
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div> -->
+      <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+        {% for project in projects %}
+          <div class="col-lg-6 col-md-6 portfolio-item isotope-item
+               {% for category in project.categories.all %} filter-{{ category.name|lower|slugify }} {% endfor %}">
+
+            <div class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="{{ project.main_image.url }}" class="img-fluid" alt="{{ project.title }}" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-actions">
+                    <a href="{{ project.main_image.url }}" class="glightbox preview-link" data-gallery="portfolio-gallery-{{ project.id }}">
+                      <i class="bi bi-eye"></i>
+                    </a>
+                    <a href="#portfolio" class="details-link"><i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="category">
+                  {% for category in project.categories.all %}
+                    {{ category.name }}{% if not forloop.last %}, {% endif %}
+                  {% endfor %}
+                </span>
+                <h3>{{ project.title }}</h3>
+
+                <div class="description-box">
+                  <div class="description-content" id="desc-{{ project.id }}">
+                    {{ project.description|safe }}
+                  </div>
+                  {% if project.description|length > 250 %}
+                  <a href="javascript:void(0);" class="read-more" data-target="desc-{{ project.id }}">Read more</a>
+                  {% endif %}
+                </div>
+              </div>
+
+              {% for image in project.images.all %}
+                <a href="{{ image.image.url }}" class="glightbox" data-gallery="portfolio-gallery-{{ project.id }}"></a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>My Services</h2>
+        <div class="title-shape">
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor"
+              stroke-width="2"></path>
+          </svg>
+        </div>
+        <p>Providing top-notch services in web development, AI, mobile apps, digital marketing, and more.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row row-cols-1 row-cols-md-3 g-4"> <!-- Ensuring 3 columns -->
+
+          <!-- Web Development -->
+          <div class="col" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item skill-box">
+              <i class="bi bi-code-slash icon"></i>
+              <h3>Web Development</h3>
+              <p>Building dynamic and scalable websites with Django, Flask, and modern frameworks.</p>
+            </div>
+          </div>
+
+          <!-- Mobile App Development -->
+          <div class="col" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item skill-box">
+              <i class="bi bi-phone icon"></i>
+              <h3>Mobile App Development</h3>
+              <p>Creating cross-platform mobile applications for seamless user experiences.</p>
+            </div>
+          </div>
+
+          <!-- AI & Machine Learning -->
+          <div class="col" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item skill-box">
+              <i class="bi bi-robot"></i>
+              <h3>AI & Machine Learning</h3>
+              <p>Developing AI-driven applications for automation, analytics, and intelligent systems.</p>
+            </div>
+          </div>
+
+          <!-- Digital Marketing -->
+          <div class="col" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item skill-box">
+              <i class="bi bi-megaphone icon"></i>
+              <h3>Digital Marketing</h3>
+              <p>Enhancing brand presence with SEO, social media marketing, and paid advertising.</p>
+            </div>
+          </div>
+
+          <!-- Graphic Design -->
+          <div class="col" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item skill-box">
+              <i class="bi bi-palette icon"></i>
+              <h3>Graphic Design</h3>
+              <p>Creating visually appealing logos, business cards, brochures, and social media designs.</p>
+            </div>
+          </div>
+
+          <!-- API Development -->
+          <div class="col" data-aos="fade-up" data-aos-delay="700">
+            <div class="service-item skill-box">
+              <i class="bi bi-cloud icon"></i>
+              <h3>API Development</h3>
+              <p>Designing RESTful APIs for seamless integration with web and mobile applications.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <div class="content" data-aos="fade-up" data-aos-delay="200">
+              <div class="section-category mb-3">Contact</div>
+              <h2 class="display-5 mb-4">Get in Touch for Web & AI Solutions</h2>
+              <p class="lead mb-4">
+                Need a high-performance website, web app, or AI-powered solution? I'm here to help!
+                Let's discuss your project and bring your ideas to life.
+              </p>
+
+
+              <div class="contact-info mt-5">
+                <div class="info-item d-flex mb-3">
+                  <i class="bi bi-envelope-at me-3"></i>
+                  <a href="mailto:namandoshi459@gmail.com" class="text-decoration-none">namandoshi459@gmail.com</a>
+                </div>
+
+                <!-- Phone: Opens dialer on mobile -->
+                <div class="info-item d-flex mb-3">
+                  <i class="bi bi-telephone me-3"></i>
+                  <a href="tel:+919624185617" class="text-decoration-none">+91 9624185617</a>
+                </div>
+
+                <div class="info-item d-flex mb-4">
+                  <i class="bi bi-geo-alt me-3"></i>
+                  <span>Ahmedabad,Gujarat</span>
+                </div>
+
+                <!-- <a href="#" class="map-link d-inline-flex align-items-center">
+                  Open Map
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </a> -->
+                <a href="https://maps.app.goo.gl/wh3LDMce42xtqEa59" target="_blank"
+                  class="map-link d-inline-flex align-items-center">
+                  Open Map
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body p-4 p-lg-5">
+
+                <!-- <form id="contactForm">
+                  <div class="row gy-4">
+                    <div class="col-12">
+                      <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-12">
+                      <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="col-12">
+                      <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required>
+                    </div>
+                    <div class="col-12">
+                      <textarea name="message" id="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                      <button type="submit" class="btn btn-submit w-100">Submit Message</button>
+                      <p id="responseMessage" style="display:none; color:green; margin-top:10px;"></p>
+                    </div>
+                  </div>
+                </form>
+                 -->
+
+                 <form id="contactForm">
+                  <div class="row gy-4">
+                    <div class="col-12">
+                      <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-12">
+                      <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="col-12">
+                      <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required>
+                    </div>
+                    <div class="col-12">
+                      <textarea name="message" id="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+
+                      <!-- Submit Button -->
+                      <button type="submit" id="submitButton" class="btn btn-submit w-100">
+                        Submit Message
+                      </button>
+
+                      <!-- Loader Animation (Initially Hidden) -->
+                      <div id="loadingSpinner" class="spinner-border text-primary mt-3" role="status" style="display:none;">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+
+                      <!-- Response Message -->
+                      <p id="responseMessage" style="display:none; color:green; margin-top:10px;"></p>
+
+                    </div>
+                  </div>
+                </form>
+
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+  </main>
+
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Naman Doshi💙</strong><span>All Rights Reserved</span>
+        </p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+
+        <!-- Email: Opens default mail app -->
+        <a href="mailto:namandoshi459@gmail.com" target="_blank">
+          <i class="bi bi-envelope-at"></i>
+        </a>
+
+        <!-- GitHub Profile -->
+        <a href="https://github.com/namandoshi9" target="_blank">
+          <i class="bi bi-github"></i>
+        </a>
+
+        <!-- Instagram Profile -->
+        <a href="https://www.instagram.com/nammman10/" target="_blank">
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <!-- LinkedIn Profile -->
+        <a href="https://www.linkedin.com/in/namandoshi9" target="_blank">
+          <i class="bi bi-linkedin"></i>
+        </a>
+
+      </div>
+
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://www.linkedin.com/in/namandoshi9">Naman Doshi</a>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      offset: 200,
+      delay: 0,
+      duration: 400,
+      easing: 'ease',
+      once: true,
+    });
+  </script>
+
+   <script>
+    <!-- JavaScript for Counter Animation -->
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".stat-number");
+
+    const options = {
+      threshold: 0.5, // Trigger when 50% of the element is in view
+    };
+
+    const observer = new IntersectionObserver(function (entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = +counter.getAttribute("data-count");
+          let count = 0;
+          const speed = 700; // Speed of counting (lower is faster)
+
+          const updateCount = () => {
+            if (count < target) {
+              count++;
+              counter.textContent = count + "+";
+              setTimeout(updateCount, speed / target);
+            } else {
+              counter.textContent = target + "+"; // Ensure final value is set
+            }
+          };
+
+          updateCount();
+          observer.unobserve(counter); // Stop observing once animation starts
+        }
+      });
+    }, options);
+
+    counters.forEach((counter) => observer.observe(counter));
+  });
+</script>
+
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          subject: document.getElementById("subject").value,
+          message: document.getElementById("message").value,
+      };
+
+      fetch("/contact/", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": getCookie("csrftoken"), // CSRF token
+          },
+          body: JSON.stringify(formData),
+      })
+      .then(response => response.json())
+      .then(data => {
+          let responseMessage = document.getElementById("responseMessage");
+          responseMessage.style.display = "block";
+          responseMessage.style.color = data.status === "success" ? "green" : "red";
+          responseMessage.textContent = data.message;
+
+          if (data.status === "success") {
+              document.getElementById("contactForm").reset();
+          }
+      })
+      .catch(error => console.error("Error:", error));
+  });
+
+  // Function to get CSRF token from cookies
+  function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== "") {
+          let cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+              let cookie = cookies[i].trim();
+              if (cookie.substring(0, name.length + 1) === name + "=") {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+  }
+  </script>
+   <!-- JavaScript for Handling Loader -->
+   <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();  // Prevent default form submission
+
+        let submitButton = document.getElementById("submitButton");
+        let loadingSpinner = document.getElementById("loadingSpinner");
+        let responseMessage = document.getElementById("responseMessage");
+
+        // Hide button and show loader
+        submitButton.style.display = "none";
+        loadingSpinner.style.display = "inline-block";
+
+        // Simulate form submission (Replace with actual AJAX call)
+        setTimeout(function() {
+            // Hide loader and show success message
+            loadingSpinner.style.display = "none";
+            responseMessage.innerText = "Your message has been sent successfully!";
+            responseMessage.style.display = "block";
+
+            // Reset form after submission
+            document.getElementById("contactForm").reset();
+
+            // Show submit button again
+            setTimeout(() => {
+                submitButton.style.display = "block";
+                responseMessage.style.display = "none";
+            }, 3000);
+
+        }, 2000); // Simulate 2 seconds delay
+    });
+    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const readMoreLinks = document.querySelectorAll(".read-more");
+
+    readMoreLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        const targetId = this.getAttribute("data-target");
+        const descBox = document.getElementById(targetId);
+
+        descBox.classList.toggle("expanded");
+
+        // Change text to Read Less
+        if (descBox.classList.contains("expanded")) {
+          this.textContent = "Read less";
+        } else {
+          this.textContent = "Read more";
+        }
+      });
+    });
+  });
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SJZM3CXB8V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SJZM3CXB8V');
+</script>
+
+</body>
+
+</html>

@@ -1,13 +1,15 @@
 # views.py
 from django.shortcuts import render
-from .models import Resume, Project
+from .models import Resume, Project, Category
 
 
 def index(request):
     resumes = Resume.objects.all()  # Get all resumes
     # projects = Project.objects.all()
-    projects = Project.objects.prefetch_related('images').all()
-    return render(request, 'portfolio/index.html', {'resumes': resumes, "projects": projects})
+    categories = Category.objects.all()  # Fetch all categories
+    projects = Project.objects.prefetch_related('categories', 'images').all()  # Fetch projects with categories and images
+    return render(request, 'portfolio/index.html', {'resumes': resumes, 'categories': categories,
+        'projects': projects,})
 # portfolio/views.py
 from django.http import HttpResponse, Http404
 from .models import Resume

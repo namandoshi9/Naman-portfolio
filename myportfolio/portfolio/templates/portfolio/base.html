@@ -1,0 +1,10 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+import os
+
+def home(request):
+    template_path = os.path.join(os.path.dirname(__file__), 'templates', 'portfolio', 'base.html')
+    if not os.path.exists(template_path):
+        return HttpResponse(f"Template not found at {template_path}")
+
+    return render(request, 'portfolio/index.html')

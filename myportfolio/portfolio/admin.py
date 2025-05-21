@@ -9,8 +9,20 @@ admin.site.register(Resume)
 #     list_display = ("title", "category")
 
 
+# from django.contrib import admin
+# from .models import Project, ProjectImage
+
+# class ProjectImageInline(admin.TabularInline):
+#     model = ProjectImage
+#     extra = 3  # Allow uploading 3 extra images by default
+
+# class ProjectAdmin(admin.ModelAdmin):
+#     inlines = [ProjectImageInline]
+
+# admin.site.register(Project, ProjectAdmin)
+
 from django.contrib import admin
-from .models import Project, ProjectImage
+from .models import Project, ProjectImage, Category
 
 class ProjectImageInline(admin.TabularInline):
     model = ProjectImage
@@ -18,5 +30,7 @@ class ProjectImageInline(admin.TabularInline):
 
 class ProjectAdmin(admin.ModelAdmin):
     inlines = [ProjectImageInline]
+    filter_horizontal = ('categories',)  # Displays checkboxes in the admin panel
 
+admin.site.register(Category)
 admin.site.register(Project, ProjectAdmin)
