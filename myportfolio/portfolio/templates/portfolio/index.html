@@ -183,38 +183,37 @@
       }
     }
 
-.tech-carousel {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
+    .tech-carousel {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
 
-.tech-track {
-  display: flex;
-  width: max-content;
-  animation: scroll 30s linear infinite;
-}
+    .tech-track {
+      display: flex;
+      width: max-content;
+      animation: scroll 30s linear infinite;
+    }
 
-.tech-track img {
-  height: 60px;
-  width: auto;
-  margin: 0 20px;
-  object-fit: contain;
-}
+    .tech-track img {
+      height: 60px;
+      width: auto;
+      margin: 0 20px;
+      object-fit: contain;
+    }
 
-/* Removed grayscale and hover effect */
-
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+    /* Removed grayscale and hover effect */
 
 
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
   </style>
 
 </head>
@@ -296,7 +295,7 @@
         </div>
       </div>
     </section>
-    
+
 
 
     <!-- About Section -->
@@ -401,43 +400,43 @@
 
 
     <!-- Technology Carousel Section -->
-<section id="technologies" class="technologies section py-5">
-  <div class="container section-title" data-aos="fade-up">
-    <div class="text-center mb-5">
-      <h2>Technologies I Use</h2>
-      <div class="title-shape">
-          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor"
-              stroke-width="2"></path>
-          </svg>
+    <section id="technologies" class="technologies section py-5">
+      <div class="container section-title" data-aos="fade-up">
+        <div class="text-center mb-5">
+          <h2>Technologies I Use</h2>
+          <div class="title-shape">
+            <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
+          </div>
         </div>
-    </div>
-    <div class="tech-carousel">
-      <div class="tech-track">
-        <!-- Logos -->
-        <img src="{% static 'img/HTML CSS JS.jpg' %}" alt="HTML">
-        <img src="{% static 'img/python.png' %}" alt="PYTHON">
-        <img src="{% static 'img/Django-Logo.png' %}" alt="DJANGO">
-        <img src="{% static 'img/aiml.png' %}" alt="AI/ML">
-        <img src="{% static 'img/aws.png' %}" alt="AWS">
-        <img src="{% static 'img/azure.png' %}" alt="Azure">
-        <img src="{% static 'img/react.jpg' %}" alt="React">
-        <img src="{% static 'img/nodejs-logo.png' %}" alt="Node.js">
-        <img src="{% static 'img/flutter.png' %}" alt="Flutter">
-        
-        <!-- Repeat logos for seamless infinite loop -->
-        <img src="{% static 'img/HTML CSS JS.jpg' %}" alt="HTML">
-        <img src="{% static 'img/Python.png' %}" alt="PYTHON">
-        <img src="{% static 'img/Django-Logo.png' %}" alt="DJANGO">
-        <img src="{% static 'img/aiml.png' %}" alt="AI/ML">
-        <img src="{% static 'img/aws.png' %}" alt="AWS">
-        <img src="{% static 'img/azure.png' %}" alt="Azure">
-        <img src="{% static 'img/react.jpg' %}" alt="React">
-        
+        <div class="tech-carousel">
+          <div class="tech-track">
+            <!-- Logos -->
+            <img src="{% static 'img/HTML CSS JS.jpg' %}" alt="HTML">
+            <img src="{% static 'img/python.png' %}" alt="PYTHON">
+            <img src="{% static 'img/Django-Logo.png' %}" alt="DJANGO">
+            <img src="{% static 'img/aiml.png' %}" alt="AI/ML">
+            <img src="{% static 'img/aws.png' %}" alt="AWS">
+            <img src="{% static 'img/azure.png' %}" alt="Azure">
+            <img src="{% static 'img/react.jpg' %}" alt="React">
+            <img src="{% static 'img/nodejs-logo.png' %}" alt="Node.js">
+            <img src="{% static 'img/flutter.png' %}" alt="Flutter">
+
+            <!-- Repeat logos for seamless infinite loop -->
+            <img src="{% static 'img/HTML CSS JS.jpg' %}" alt="HTML">
+            <img src="{% static 'img/Python.png' %}" alt="PYTHON">
+            <img src="{% static 'img/Django-Logo.png' %}" alt="DJANGO">
+            <img src="{% static 'img/aiml.png' %}" alt="AI/ML">
+            <img src="{% static 'img/aws.png' %}" alt="AWS">
+            <img src="{% static 'img/azure.png' %}" alt="Azure">
+            <img src="{% static 'img/react.jpg' %}" alt="React">
+
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
@@ -555,60 +554,90 @@
                 <h2>Work Experience</h2>
                 <p class="lead">Experienced in full-stack development, API integrations, and AI-driven solutions.
                   Focused on optimizing performance and enhancing user experience.</p>
-
                 <div class="timeline">
                   <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="timeline-left">
-                      <h4 class="company">Webapprise system</h4>
-                      <span class="period">Jun, 2024 - Current</span>
+                      <h4 class="company">Freelancer</h4>
+                      <span class="period">Jan, 2023 - Current</span>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-right">
-                      <h3 class="position">jr. python developer</h3>
-                      <p class="description">Successfully developed and deployed a full-stack web application using
-                        Django, featuring dynamic user interfaces and seamless
-                        integration of RESTful APIs. Enhanced application functionality by creating custom APIs and
-                        optimizing backend performance, resulting in
-                        a 35% reduction in response times. Implemented AI-driven image processing capabilities to
-                        automatically tag and categorize images,
-                        significantly improving user experience and operational efficiency. Leveraged tools like Meta
-                        for Developers, Facebook Ads Manager,
-                        Google Analytics, and AWS for advanced analytics, advertising optimization, and cloud
-                        infrastructure management. Achieved a high level
-                        of system reliability and security, earning commendation for delivering robust, scalable
-                        solutions that met all project objectives and client
-                        needs.</p>
-                    </div>
-                  </div>
-
-                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-left">
-                      <h4 class="company">Saubhagyam Web Pvt. Ltd.</h4>
-                      <span class="period">Jan,2024 - Jun,2024</span>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-right">
-                      <h3 class="position">Python Backend Intern</h3>
-                      <p class="description">
-                        In my role as a Python Backend Intern, I honed my skills in Python, specifically Django and
-                        Django REST frameworks. I also focused on
-                        backend development tasks, leveraging PostgreSQL and SQLite for database management. </p>
+                      <h3 class="position">Full‑Stack Developer & Project Lead
+                      </h3>
+                      <p class="description">Worked independently with clients across different domains, delivering
+                        full‑stack
+                        web applications, mobile app APIs, and AI‑powered automation solutions. Managed end‑to‑end
+                        project
+                        development from requirement gathering to deployment, ensuring smooth communication, timely
+                        execution,
+                        and high‑quality deliverables.</p>
                       <ul>
-                        <li>During my internship, I actively contributed to backend module development, ensuring
-                          seamless integration into projects.</li>
-                        <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the
-                          project. </li>
-                        <li>I
-                          expanded my expertise by acquiring proficiency in HTML and CSS for frontend collaboration,
-                          enriching my ability to contribute to
-                          comprehensive project development.</li>
-                        <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                        <li>Led development teams as a project manager, ensuring on‑time project delivery.</li>
+                        <li>Handled cloud setup, server configurations, deployments, and database optimization.</li>
+                        <li>Developed scalable architectures using Django, DRF, React, Flutter APIs, and modern cloud
+                          tools.</li>
+                        <li>Provided long‑term support, maintenance, and performance enhancement for client systems.
+                        </li>
+                        <li>Strengthened leadership skills through team coordination, client communication, and
+                          strategic planning.</li>
                       </ul>
-                      <p></p>
                     </div>
                   </div>
 
-                  <!-- <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                  <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                      <div class="timeline-left">
+                        <h4 class="company">Webapprise system</h4>
+                        <span class="period">Jun, 2024 - Feb, 2025</span>
+                      </div>
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-right">
+                        <h3 class="position">jr. python developer</h3>
+                        <p class="description">Successfully developed and deployed a full-stack web application using
+                          Django, featuring dynamic user interfaces and seamless
+                          integration of RESTful APIs. Enhanced application functionality by creating custom APIs and
+                          optimizing backend performance, resulting in
+                          a 35% reduction in response times. Implemented AI-driven image processing capabilities to
+                          automatically tag and categorize images,
+                          significantly improving user experience and operational efficiency. Leveraged tools like Meta
+                          for Developers, Facebook Ads Manager,
+                          Google Analytics, and AWS for advanced analytics, advertising optimization, and cloud
+                          infrastructure management. Achieved a high level
+                          of system reliability and security, earning commendation for delivering robust, scalable
+                          solutions that met all project objectives and client
+                          needs.</p>
+                      </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                      <div class="timeline-left">
+                        <h4 class="company">Saubhagyam Web Pvt. Ltd.</h4>
+                        <span class="period">Jan,2024 - Jun,2024</span>
+                      </div>
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-right">
+                        <h3 class="position">Python Backend Intern</h3>
+                        <p class="description">
+                          In my role as a Python Backend Intern, I honed my skills in Python, specifically Django and
+                          Django REST frameworks. I also focused on
+                          backend development tasks, leveraging PostgreSQL and SQLite for database management. </p>
+                        <ul>
+                          <li>During my internship, I actively contributed to backend module development, ensuring
+                            seamless integration into projects.</li>
+                          <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of
+                            the
+                            project. </li>
+                          <li>I
+                            expanded my expertise by acquiring proficiency in HTML and CSS for frontend collaboration,
+                            enriching my ability to contribute to
+                            comprehensive project development.</li>
+                          <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                        </ul>
+                        <p></p>
+                      </div>
+                    </div>
+
+                    <!-- <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
                     <div class="timeline-left">
                       <h4 class="company">Stepping Stone Ltd.</h4>
                       <span class="period">2015-2019</span>
@@ -620,6 +649,7 @@
                         tempus.</p>
                     </div>
                   </div> -->
+                  </div>
                 </div>
               </div>
 
@@ -1062,144 +1092,153 @@
     });
   </script>
 
-  <script>
-    <!-- JavaScript for Counter Animation -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".stat-number");
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const counters = document.querySelectorAll(".stat-number");
+  const options = {
+    threshold: 0.5,
+  };
 
-      const options = {
-        threshold: 0.5, // Trigger when 50% of the element is in view
-      };
+  const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute("data-count");
+        let count = 0;
+        const speed = 700;
 
-      const observer = new IntersectionObserver(function (entries, observer) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            const target = +counter.getAttribute("data-count");
-            let count = 0;
-            const speed = 700; // Speed of counting (lower is faster)
-
-            const updateCount = () => {
-              if (count < target) { count++; counter.textContent = count + "+"; setTimeout(updateCount, speed / target); }
-              else {
-                counter.textContent = target + "+"; // Ensure final value is set } }; updateCount();
-                observer.unobserve(counter); // Stop observing once animation starts } }); }, options); counters.forEach((counter)=>
-                observer.observe(counter));
-      });
-  </script>
-
-
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      let formData = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value,
-      };
-
-      fetch("/contact/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRFToken": getCookie("csrftoken"), // CSRF token
-        },
-        body: JSON.stringify(formData),
-      })
-        .then(response => response.json())
-        .then(data => {
-          let responseMessage = document.getElementById("responseMessage");
-          responseMessage.style.display = "block";
-          responseMessage.style.color = data.status === "success" ? "green" : "red";
-          responseMessage.textContent = data.message;
-
-          if (data.status === "success") {
-            document.getElementById("contactForm").reset();
+        const updateCount = () => {
+          if (count < target) {
+            count++;
+            counter.textContent = count + "+";
+            setTimeout(updateCount, speed / target);
+          } else {
+            counter.textContent = target + "+";
           }
-        })
-        .catch(error => console.error("Error:", error));
-    });
+        };
 
-    // Function to get CSRF token from cookies
-    function getCookie(name) {
-      let cookieValue = null;
-      if (document.cookie && document.cookie !== "") {
-        let cookies = document.cookie.split(";");
-        for (let i = 0; i < cookies.length; i++) {
-          let cookie = cookies[i].trim();
-          if (cookie.substring(0, name.length + 1) === name + "=") {
-            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-            break;
+        updateCount();
+        observer.unobserve(counter);
+      }
+    });
+  }, options);
+
+  counters.forEach((counter) => observer.observe(counter));
+});
+</script>
+
+
+  <script>
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          subject: document.getElementById("subject").value,
+          message: document.getElementById("message").value,
+        };
+
+        fetch("/contact/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": getCookie("csrftoken"), // CSRF token
+          },
+          body: JSON.stringify(formData),
+        })
+          .then(response => response.json())
+          .then(data => {
+            let responseMessage = document.getElementById("responseMessage");
+            responseMessage.style.display = "block";
+            responseMessage.style.color = data.status === "success" ? "green" : "red";
+            responseMessage.textContent = data.message;
+
+            if (data.status === "success") {
+              document.getElementById("contactForm").reset();
+            }
+          })
+          .catch(error => console.error("Error:", error));
+      });
+
+      // Function to get CSRF token from cookies
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          let cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
           }
         }
+        return cookieValue;
       }
-      return cookieValue;
-    }
   </script>
   <!-- JavaScript for Handling Loader -->
   <script>
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault();  // Prevent default form submission
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();  // Prevent default form submission
 
-      let submitButton = document.getElementById("submitButton");
-      let loadingSpinner = document.getElementById("loadingSpinner");
-      let responseMessage = document.getElementById("responseMessage");
+        let submitButton = document.getElementById("submitButton");
+        let loadingSpinner = document.getElementById("loadingSpinner");
+        let responseMessage = document.getElementById("responseMessage");
 
-      // Hide button and show loader
-      submitButton.style.display = "none";
-      loadingSpinner.style.display = "inline-block";
+        // Hide button and show loader
+        submitButton.style.display = "none";
+        loadingSpinner.style.display = "inline-block";
 
-      // Simulate form submission (Replace with actual AJAX call)
-      setTimeout(function () {
-        // Hide loader and show success message
-        loadingSpinner.style.display = "none";
-        responseMessage.innerText = "Your message has been sent successfully!";
-        responseMessage.style.display = "block";
+        // Simulate form submission (Replace with actual AJAX call)
+        setTimeout(function () {
+          // Hide loader and show success message
+          loadingSpinner.style.display = "none";
+          responseMessage.innerText = "Your message has been sent successfully!";
+          responseMessage.style.display = "block";
 
-        // Reset form after submission
-        document.getElementById("contactForm").reset();
+          // Reset form after submission
+          document.getElementById("contactForm").reset();
 
-        // Show submit button again
-        setTimeout(() => {
-          submitButton.style.display = "block";
-          responseMessage.style.display = "none";
-        }, 3000);
+          // Show submit button again
+          setTimeout(() => {
+            submitButton.style.display = "block";
+            responseMessage.style.display = "none";
+          }, 3000);
 
-      }, 2000); // Simulate 2 seconds delay
-    });
+        }, 2000); // Simulate 2 seconds delay
+      });
   </script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const readMoreLinks = document.querySelectorAll(".read-more");
+      document.addEventListener("DOMContentLoaded", function () {
+        const readMoreLinks = document.querySelectorAll(".read-more");
 
-      readMoreLinks.forEach(link => {
-        link.addEventListener("click", function () {
-          const targetId = this.getAttribute("data-target");
-          const descBox = document.getElementById(targetId);
+        readMoreLinks.forEach(link => {
+          link.addEventListener("click", function () {
+            const targetId = this.getAttribute("data-target");
+            const descBox = document.getElementById(targetId);
 
-          descBox.classList.toggle("expanded");
+            descBox.classList.toggle("expanded");
 
-          // Change text to Read Less
-          if (descBox.classList.contains("expanded")) {
-            this.textContent = "Read less";
-          } else {
-            this.textContent = "Read more";
-          }
+            // Change text to Read Less
+            if (descBox.classList.contains("expanded")) {
+              this.textContent = "Read less";
+            } else {
+              this.textContent = "Read more";
+            }
+          });
         });
       });
-    });
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJZM3CXB8V"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-    gtag('config', 'G-SJZM3CXB8V');
+      gtag('config', 'G-SJZM3CXB8V');
   </script>
 
 </body>
